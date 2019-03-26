@@ -6,6 +6,9 @@ namespace Aula04
     {
         static void Main(string[] args)
         {
+            // Constantes
+            const NPCPerks niceCombo = NPCPerks.Combat | NPCPerks.Luck;
+
             // Declaração de variáveis
             int numNPCs;
             string numNPCsString;
@@ -44,7 +47,7 @@ namespace Aula04
                     perksDeCadaNPC[i] |= NPCPerks.Combat;
                 }
 
-                // Stealth ?
+                // Lockpick ?
                 Console.Write("\tLockpick? (s/n) ");
                 resposta = Console.ReadLine();
                 if (resposta[0] == 's')
@@ -52,7 +55,7 @@ namespace Aula04
                     perksDeCadaNPC[i] |= NPCPerks.Lockpick;
                 }
 
-                // Stealth ?
+                // Luck ?
                 Console.Write("\tLuck? (s/n) ");
                 resposta = Console.ReadLine();
                 if (resposta[0] == 's')
@@ -69,9 +72,7 @@ namespace Aula04
                 Console.WriteLine($"NPC {i} : {perksDeCadaNPC[i]}");
 
                 // Mostrar mensagem especial?
-                if ((perksDeCadaNPC[i] & NPCPerks.Combat) == NPCPerks.Combat
-                    &&
-                    (perksDeCadaNPC[i] & NPCPerks.Luck) == NPCPerks.Luck)
+                if ((perksDeCadaNPC[i] & niceCombo) == niceCombo)
                 {
                     Console.WriteLine("\tYou shall win all fights!");
                 }
