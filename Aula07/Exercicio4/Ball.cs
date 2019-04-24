@@ -1,6 +1,6 @@
 ﻿// Fully documented version of this exercise available at
 // http://starboundsoftware.com/books/c-sharp/try-it-out/designing-and-building-classes
-namespace Aula06
+namespace Exercicio4
 {
     class Ball
     {
